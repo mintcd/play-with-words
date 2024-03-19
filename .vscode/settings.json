@@ -3,6 +3,7 @@
     "depd",
     "dependers",
     "networkx",
+    "protips",
     "unfound",
     "wordlist",
     "Wordup"

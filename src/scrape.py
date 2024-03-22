@@ -13,7 +13,7 @@ class WordupScrape:
   """
   Scrape words from the Wordup dictionary
   """
-  def scrape_word(word, wordup):
+  def scrape_word(word):
     if " " in word:
       search_for = word.replace(" ", "-")
     elif "-" in word:
@@ -29,14 +29,13 @@ class WordupScrape:
 
         if json_tag:
             json_data = json.loads(json_tag.text)
-            wordup.append(json_data)
             print(f"Scraped {search_for} successfully!")
+            return json_data
 
         else:
             print(f"No tag with type='application/json' of {search_for}.")
     else:
         print(f"Failed to retrieve {search_for}")
-    return wordup
 
 
   def scrape_thread(num, word_list, scraped_words):

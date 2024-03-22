@@ -125,7 +125,7 @@ class WordupAnalysis:
           print(f"Already there {word}")
         return wordup_processed
     print(f"Cannot add {word}!")
-  return wordup_processed
+    return wordup_processed
 
 class MorphemeAnalysis:
   """

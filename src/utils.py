@@ -18,10 +18,27 @@ def print_key_structure(dictionary, indent=0):
     """
     Print the key structure of a dictionary
     """
-    for key, value in dictionary.items():
-        print('  ' * indent + str(key))
-        if isinstance(value, dict):
-            print_key_structure(value, indent + 1)
+    if isinstance(dictionary, dict):  
+        for key, value in dictionary.items():
+            print('  ' * indent + str(key))
+            if isinstance(value, dict):
+                print_key_structure(value, indent + 1)
+            elif isinstance(value, list) and value:
+                element = value[0]
+                if isinstance(element, dict) or (isinstance(element, list) and element):
+                    print('  ' * (indent + 1) + "[")
+                    print_key_structure(value[0], indent + 2)
+                    print('  ' * (indent + 1) + "]")
+    elif isinstance(dictionary, list) and dictionary:
+        element = dictionary[0]
+        if isinstance(element, dict) or (isinstance(element, list) and element):
+            print('  ' * indent + "[")
+            print_key_structure(element, indent + 1)
+            print('  ' * indent + "]")
+    else:
+        return
+
+
 
 def read_json_from_zip(zip_file_path, json_file_name):
     """

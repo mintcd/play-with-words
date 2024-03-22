@@ -1,3 +1,7 @@
 data/wordup_processed.zip filter=lfs diff=lfs merge=lfs -text
 data/wordup.zip filter=lfs diff=lfs merge=lfs -text
 data/wordup_complete.zip filter=lfs diff=lfs merge=lfs -text
+git add .gitattributes
+data/wordup_complete.rar filter=lfs diff=lfs merge=lfs -text
+D:/Projects/play-with-words/data/wordup_raw.rar filter=lfs diff=lfs merge=lfs -text
+data/wordup_raw.rar filter=lfs diff=lfs merge=lfs -text

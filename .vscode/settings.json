@@ -5,6 +5,9 @@
     "networkx",
     "protips",
     "unfound",
+    "unscraped",
+    "wordform",
+    "wordforms",
     "wordlist",
     "Wordup"
   ]
